@@ -1,5 +1,13 @@
 function minDate(dates) {
-  //write you code here
+  let dateObjects = dates.map(date => new Date(date));
+  
+  let minDateObject = new Date(Math.min(...dateObjects));
+
+  let year = minDateObject.getFullYear();
+  let month = String(minDateObject.getMonth() + 1).padStart(2, '0');
+  let day = String(minDateObject.getDate()).padStart(2, '0');
+  
+  return `${year}/${month}/${day}`;
 }
 
 // Do not change the code
@@ -38,3 +46,4 @@ var dates = [
 ];
 
 alert(minDate(dates));
+// minDate(dates);
